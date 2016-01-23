@@ -1,5 +1,6 @@
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/goldenbell';
+var path = require('path');
+var connectionString = require(path.join(__dirname, '../', '../', 'config'));
 
 var client = new pg.Client(connectionString);
 client.connect();
